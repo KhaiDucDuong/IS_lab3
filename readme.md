@@ -4,17 +4,17 @@
 # Lab 3 - Delete file using return-to-libc attack with environment variable
 
 1. Set up dummyfile directory <br>
-![image](https://github.com/user-attachments/assets/79a3216e-8202-41ed-b058-8df010387d55)
+<img src='./images/1.png'>
 2. Set environment variable for dummyfile path <br>
-![image](https://github.com/user-attachments/assets/83a9849a-a64a-49da-9559-e3e327195335)
+<img src='./images/2.png'>
 3. Analyze vuln.c stack frame for function main <br>
-![image](https://github.com/user-attachments/assets/b17ea0fd-c18f-4f86-b41b-49cf1103018a)
+<img src='./images/3.png'>
 <br>
 The function main takes in 2 parameters: int argc, char* argv[], and it has a local variable: char buf[64], the analyzed stack frame is: <br>
-![lab3 stack frame drawio (1)](https://github.com/user-attachments/assets/39d30c65-b0d9-4a8e-8654-1cf1cb5688a8)
+<img src='./images/4.png'>
 We want to start buffer overflow from variable buf, overwrite eip with the function remove's address, following by the function exit's address and the dummyfile environment variable's address. <br>
 4. Compile and start gdb <br> 
-![image](https://github.com/user-attachments/assets/efb21707-27b1-4488-9908-7c14b99c5ae1)
+<img src='./images/5.png'>
 I turned on the NX bit here so stack is not executable, we're forced to use exploits such as return-to-libc to attack the program.
 6. Find addresses of remove, exit, and dummyfile envrionment variable <br> 
 ![image](https://github.com/user-attachments/assets/a7ae1dbe-4e1f-4bbd-b1b1-133a30c67a08)
