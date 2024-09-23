@@ -8,7 +8,7 @@
 <h2>2. Set environment variable for dummyfile path</h2>
 <img src='./images/2.png'>
 <br>
-<h2>3. Analyze vuln.c stack frame for function main</h2>
+<h2>3. Analyze vuln.c stack frame</h2>
 <img src='./images/3.png'>
 <br>
 The function main takes in 2 parameters: int argc, char* argv[], and it has a local variable: char buf[64], the analyzed stack frame is: <br>
