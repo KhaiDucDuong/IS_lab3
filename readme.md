@@ -14,7 +14,7 @@
 The function main takes in 2 parameters: int argc, char* argv[], and it has a local variable: char buf[64], the analyzed stack frame is: <br>
 <img src='./images/4.png'>
 <br>
-We want to start buffer overflow from variable buf, overwrite eip with the function remove's address, following by the function exit's address and the dummyfile environment variable's address. <br>
+We want to start buffer overflow from variable buf, overwrite eip with the remove function's address, following by the exit function's address and the dummyfile environment variable's address. <br>
 <h2>4. Compile and start gdb</h2>
 <img src='./images/5.png'>
 I turned on the NX bit here so stack is not executable, we're forced to use exploits such as return-to-libc to attack the program.
