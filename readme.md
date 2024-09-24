@@ -20,7 +20,7 @@ We want to start buffer overflow from variable buf, overwrite eip with the remov
 I turned on the NX bit here so stack is not executable, we're forced to use exploits such as return-to-libc to attack the program.
 <h2>5. Find addresses of remove, exit, and dummyfile envrionment variable</h2>
 <img src='./images/6.png'>
-Because I need the value from the dummyfile env varaible only, I incremented the addresses by 6 to remove "DUMMY=". Therefore, when we pass in the address 0xffffdf1e, we should get "./tmp/dummy/dummyfile" as our value. <br>
+Because I need the value from the dummyfile env varaible only, I incremented the address by 6 to remove "DUMMY=". Therefore, when we pass in the address 0xffffdf24, we should get "./tmp/dummy/dummyfile" as our value. <br>
 <h2>6. Conduct attack</h2>
 exit - 0xf7e449e0 -> \xe0\x49\xe4\xf7 <br>
 remove - 0xf7e71f30 -> \x30\x1f\xe7\xf7 <br>
